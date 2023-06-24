@@ -13,13 +13,8 @@
                 position: relative;
                 top: 25vh;
                 left: 25vw;
-                /* margin-top: 25%;
-                margin-left: 25%; */
                 border: 2px solid black;
                 border-radius: 10%;
-                /* height: 50vh;
-                width: 50vw; */
-                /* padding-left: 2px; */
                 min-height: 400px;
                 max-height: 400px;
                 max-width: 250px;
@@ -67,7 +62,6 @@
     <body>
         <div id = "main">
             <form>
-                <!-- <input type="text" class="Inline-block" id="Display" maxlength="13" placeholder="0"> -->
                 <label class="Inline-block" id="Display">0</label>
             </form>
             <div class="Line" id="Line1">
@@ -96,7 +90,6 @@
             </div>
         </div>
         <script>
-            // var buttons = document.getElementsByClassName(Button);
             var operand1 = 0;
             var operand2;
             var operator;
@@ -260,12 +253,6 @@
                     operand2 = 0;
                 }
                 if(operator == '/'){
-                    // try{
-                    //     result = operand1 / operand2;
-                    // }
-                    // catch(err){
-                    //     result = "Error";
-                    // }
                     result = operand1/operand2;
                     if(result == (1/0))
                         result = "Error";
@@ -284,6 +271,7 @@
                 }
                 Display.innerText = 0;
             }
+            //Keyboard Listeners Adding using Keyup event to add functionaility to side num-pad
             document.body.addEventListener('keyup',(event) => {
                 var v = event.keyCode;
                 if(v == '48' || v == '96')
