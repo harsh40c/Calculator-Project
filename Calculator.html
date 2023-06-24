@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="icon" type="image/jpg" href="https://i5.walmartimages.com/asr/f426d1fd-da00-412f-8b5b-303b5726e8ae_1.0c1ff7ffbd1f007fc8f35008f0abfde0.jpeg">
+        <style>
+            body{
+              margin: 0px;
+              padding: 0px;
+              background-image: radial-gradiant(circle,lightgrey,white);  
+            }
+            #main{
+                position: relative;
+                top: 25vh;
+                left: 25vw;
+                /* margin-top: 25%;
+                margin-left: 25%; */
+                border: 2px solid black;
+                border-radius: 10%;
+                /* height: 50vh;
+                width: 50vw; */
+                /* padding-left: 2px; */
+                min-height: 400px;
+                max-height: 400px;
+                max-width: 250px;
+                min-width: 250px;
+                overflow: hidden;
+                background-color: lightgray;
+            }
+            .Inline-block{
+                display: inline-block;
+            }
+            #Display{
+                margin-top: 20px;
+                font-size: 30px;
+                font-style: italic;
+                color: black;
+                background-color: lightgray;
+                width: 250px;
+                height: 40px;
+                border-bottom: 4px solid black;
+                text-align: right;
+                padding-right: 5%;
+            }
+            .Line{
+                height: 85px;
+                /* overflow: hidden; */
+            }
+            .Line button{ 
+                height: 84px;
+                width: 59px;
+                border-bottom: 4px solid black;
+                border-right: 4px solid black;
+                font-size: 30px;
+                background-color: rgb(35, 35, 35);
+                color: white;
+            }
+            .Line button:hover{
+                background-color: rgb(0, 0, 0);
+            }
+            .Button{
+                background-color: aquamarine;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id = "main">
+            <form>
+                <!-- <input type="text" class="Inline-block" id="Display" maxlength="13" placeholder="0"> -->
+                <label class="Inline-block" id="Display">0</label>
+            </form>
+            <div class="Line" id="Line1">
+                <button class="Inline-block Button" onclick="funcc()" id="AC" data-value="AC">AC</button>
+                <button class="Inline-block Button" onclick="funcm()" id="Multiply" data-value="*">*</button>
+                <button class="Inline-block Button" onclick="funcd()" id="Divide" data-value="/">/</button>
+                <button class="Inline-block Button" onclick="funcs()" id="Subtract" data-value="-">-</button>
+            </div>
+            <div class="Line" id="Line1">
+                <button class="Inline-block Button" onclick="func7()" id="Seven" data-value="7">7</button>
+                <button class="Inline-block Button" onclick="func8()" id="Eigth" data-value="8">8</button>
+                <button class="Inline-block Button" onclick="func9()" id="Nine" data-value="9">9</button>
+                <button class="Inline-block Button" onclick="funca()" id="Add" data-value="+">+</button>
+            </div>
+            <div class="Line" id="Line1">
+                <button class="Inline-block Button" onclick="func4()" id="Four" data-value="4">4</button>
+                <button class="Inline-block Button" onclick="func5()" id="Five" data-value="5">5</button>
+                <button class="Inline-block Button" onclick="func6()" id="Six" data-value="6">6</button>
+                <button class="Inline-block Button" onclick="funce()" id="Equals" data-value="=">=</button>
+            </div>
+            <div class="Line" id="Line1">
+                <button class="Inline-block Button" onclick="func1()" id="One" data-value="1">1</button>
+                <button class="Inline-block Button" onclick="func2()" id="Two" data-value="2">2</button>
+                <button class="Inline-block Button" onclick="func3()" id="Three" data-value="3">3</button>
+                <button class="Inline-block Button" onclick="func0()" id="Zero" data-value="0">0</button>
+            </div>
+        </div>
+        <script>
+            // var buttons = document.getElementsByClassName(Button);
+            var operand1 = 0;
+            var operand2;
+            var operator;
+            function func0(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 0;
+                }
+                else{
+                    Display.innerText += 0;
+                }
+            }
+            function func1(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 1;
+                }
+                else{
+                    Display.innerText += 1;
+                }
+            }
+            function func2(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 2;
+                }
+                else{
+                    Display.innerText += 2;
+                }
+            }function func3(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 3;
+                }
+                else{
+                    Display.innerText += 3;
+                }
+            }function func4(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 4;
+                }
+                else{
+                    Display.innerText += 4;
+                }
+            }function func5(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 5;
+                }
+                else{
+                    Display.innerText += 5;
+                }
+            }function func6(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 6;
+                }
+                else{
+                    Display.innerText += 6;
+                }
+            }function func7(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 7;
+                }
+                else{
+                    Display.innerText += 7;
+                }
+            }function func8(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 8;
+                }
+                else{
+                    Display.innerText += 8;
+                }
+            }function func9(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                if(Display.innerText == '0'){
+                    Display.innerText = 9;
+                }
+                else{
+                    Display.innerText += 9;
+                }
+            }
+            function funca(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                operand1=Number(Display.innerText);
+                operator='+';
+                Display.innerText = 0;
+            }
+            function funcs(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                operand1=Number(Display.innerText);
+                operator='-';
+                Display.innerText = 0;
+            }
+            function funcm(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                operand1=Number(Display.innerText);
+                operator='*';
+                Display.innerText = 0;
+            }
+            function funcd(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                operand1=Number(Display.innerText);
+                operator='/';
+                Display.innerText = 0;
+            }
+            function funce(){
+                if(Display.innerText == "Error"){
+                    return;
+                }
+                operand2 = Number(Display.innerText);
+                var result;
+                if(operator == '+'){
+                    result = operand1 + operand2;
+                    Display.innerText = result;
+                    operand1 = 0;
+                    operand2 = 0;
+                }
+                if(operator == '-'){
+                    result = operand1 - operand2;
+                    Display.innerText = result;
+                    operand1 = 0;
+                    operand2 = 0;
+                }
+                if(operator == '*'){
+                    result = operand1 * operand2;
+                    Display.innerText = result;
+                    operand1 = 0;
+                    operand2 = 0;
+                }
+                if(operator == '/'){
+                    // try{
+                    //     result = operand1 / operand2;
+                    // }
+                    // catch(err){
+                    //     result = "Error";
+                    // }
+                    result = operand1/operand2;
+                    if(result == (1/0))
+                        result = "Error";
+                    Display.innerText = result;
+                    operand1 = 0;
+                    operand2 = 0;
+                }
+            }
+            function funcc(){
+                if(Display.innerText == "Error"){
+                    window.location.reload();
+                }
+                if(Display.innerText == '0'){
+                    window.location.reload();
+                    return;
+                }
+                Display.innerText = 0;
+            }
+            document.body.addEventListener('keyup',(event) => {
+                var v = event.keyCode;
+                if(v == '48' || v == '96')
+                    func0();
+                if(v == '49' || v == '97')
+                    func1();
+                if(v == '50' || v == '98')
+                    func2();
+                if(v == '51' || v == '99')
+                    func3();
+                if(v == '52' || v == '100')
+                    func4();
+                if(v == '53' || v == '101')
+                    func5();
+                if(v == '54' || v == '102')
+                    func6();
+                if(v == '55' || v == '103')
+                    func7();    
+                if(v == '56' || v == '104')
+                    func8();
+                if(v == '57' || v == '105')
+                    func9();
+                if(v == '107')
+                    funca();
+                if(v == '109')
+                    funcs();
+                if(v == '106')
+                    funcm();
+                if(v == '111')
+                    funcd();
+                if(v == '13')
+                    funce();
+                if(v == '46')
+                    funcc();
+                if(v == '8'){
+                    if(Display.innerText == 0){
+                        Display.innerText = 0;
+                    }
+                    else{
+                        var x = Number(Display.innerText);
+                        x = x/10;
+                        diff = Math.round(x) - x;
+                        // console.log(diff);
+                        if(diff > 0){
+                            x = Math.round(x) - 1;
+                            // console.log(x);
+                        }
+                        else{
+                            x = Math.round(x);
+                        }
+                        Display.innerText = x;
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
